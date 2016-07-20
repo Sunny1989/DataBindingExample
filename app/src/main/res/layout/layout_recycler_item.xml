@@ -1,0 +1,37 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="UserItemBinding">
+
+        <variable
+            name="UserObj"
+            type="example.databindingexample.model.User" />
+
+        <variable
+            name="userListAdapter"
+            type="example.databindingexample.adapters.UserListAdapter" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:onClick="@{userListAdapter.adapterMethod}"
+        android:onLongClick="@{userListAdapter.longClick}"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@{UserObj.firstName}"
+            app:font="@{`roboto_regular.otf`}" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@{UserObj.lastName}"
+            app:font="@{`roboto_regular_italic.otf`}" />
+    </LinearLayout>
+</layout>

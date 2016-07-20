@@ -1,0 +1,34 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="FirstFragmentBinding">
+
+        <variable
+            name="firstFrag"
+            type="example.databindingexample.view.fragments.FirstFragment" />
+
+        <variable
+            name="secondActivity"
+            type="example.databindingexample.view.SecondActivity" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{(v)->firstFrag.clickFromFragment(v,`Sunny`)}"
+            android:text="Click From Fragment" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{(v)->secondActivity.clickForActivity(v,`Call from First Fragment to Activity`)}"
+            android:text="Call Activity Method" />
+    </LinearLayout>
+
+
+</layout>
